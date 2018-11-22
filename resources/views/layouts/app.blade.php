@@ -4,6 +4,7 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="image-picker/image-picker.css">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
     <link href="https://fonts.googleapis.com/css?family=Raleway:100,600" rel="stylesheet" type="text/css">
     <link href="data:text/css;charset=utf-8," rel="stylesheet" data-href="../dist/css/bootstrap-theme.min.css" id="bs-theme-stylesheet">
@@ -12,6 +13,8 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/js/bootstrap.min.js" integrity="sha384-o+RDsa0aLu++PJvFqy8fFScvbHFLtbvScb8AjopnFD+iEQ7wo/CG0xlczd+2O/em" crossorigin="anonymous"></script>
     <script src="https://cloud.tinymce.com/stable/tinymce.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="image-picker/image-picker.js" type="text/javascript"></script>
     <script>tinymce.init({ selector:'textarea.content' });</script>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -28,7 +31,7 @@
         body
         {
              background-image: url("https://lh3.googleusercontent.com/-_gvlOXyqZDY/W8y1Gw1xx2I/AAAAAAAACE0/8HC9nylw9TQWNqdbxx2GUbhm-iU3q62SgCL0BGAYYCw/h900/2018-10-21.jpg");
-             
+             background-attachment: fixed;
         }
         
         </style>
@@ -67,7 +70,7 @@
                 <div class="collapse navbar-collapse" id="navbarNavDropdown">
                     <ul class="navbar-nav">
                         <li class="nav-item">
-                            <button type="button" class="btn btn-info">bumeluj.pl</button>
+                            <a class="btn btn-info" href="/advertisements">bumeluj.pl</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="/advertisements">Home</a>

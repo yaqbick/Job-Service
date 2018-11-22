@@ -62,7 +62,7 @@
                         @foreach($advertisements as $adv)
                         <tr>
                             <?php $img ="storage/". DB:: table('employers')->where('name',$adv->employer)->value('image'); ?>
-                                <td><img src="{{$img}}" width="100" height="100" alt="Image"/></td>
+                            <td><img src="{{$img}}" width="100" height="100" alt="Image"/></td>
                                 <td><h3><a href="/filtered/example/<?php  echo $adv->id;?>"><?php  echo $adv->title;?></h3></a><br><h5><?php  echo $adv->city;?><h5></td>
                         </tr>
                         @endforeach

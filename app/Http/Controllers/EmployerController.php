@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Employer;
+use App\Image;
+use Illuminate\Support\Facades\DB;
 
 class EmployerController extends Controller
 {
@@ -14,7 +16,7 @@ class EmployerController extends Controller
      */
     public function index()
     {
-        //
+
     }
 
     /**
@@ -34,21 +36,19 @@ class EmployerController extends Controller
         $emp = $this->validate(request(), [
             'emplName' => 'required',
             'emplDescription' => 'required',
-            'emplImage' =>  'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048'
           ]);
-
-          $path = $request->file('emplImage')->store('public');
-          $path = substr($path,7);
 
           $emp = [
               'name'=> $request['emplName'],
               'description'=> $request['emplDescription'],
-              'image'=>$path
+              'image'=>'default'
+              
           ];
           
           Employer::create($emp);
-  
-          return back()->with('success', 'Pracodawca został dodany');
+          $currentEmpl = DB::table('employers')->where('description', $emp['description'])->first();
+ 
+          return redirect('/employers/pics/'.$currentEmpl->id);
       
     }
 
@@ -95,5 +95,27 @@ class EmployerController extends Controller
     public function destroy($id)
     {
         //
+    }
+
+    public function gallery()
+    {
+        $images = Image::all();
+        $rowsCount= sizeOf($images)/2;
+        //dd($images[1]->url);
+        //dd($rowsCount);
+        return view('employers.pics', compact('images','rowsCount'));
+    }
+
+    public function chooseImg(Request $request)
+    {
+        $prevUrl=url()->previous();
+        $emplId = str_replace("http://127.0.0.1:8000/employers/pics/",null,$prevUrl);
+        //$imgId=$request->input('image')->get('value');
+        dd($request);
+        DB::table('employers')->where('id', $emplId)->update(['image' => 1]);
+
+      return back();                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          
+       // return redirect('/employers/create/imageId={imageId}');
+     
     }
 }

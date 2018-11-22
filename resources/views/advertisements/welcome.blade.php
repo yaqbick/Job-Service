@@ -69,9 +69,11 @@
                         @endforeach
                         </tbody>
                     </table>
+                    <div class="card" >{{ $advertisements->links() }}</div>
                 </div>
             </div>
         </div>
+        
         </div>
 @endsection
 

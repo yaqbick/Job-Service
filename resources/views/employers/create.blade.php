@@ -3,6 +3,17 @@
 
 @section('content')
 <div class ="container pt-5">
+
+@if ($errors->any())
+      <div class="alert alert-danger">
+          <ul>
+              @foreach ($errors->all() as $error)
+                  <li>{{ $error }}</li>
+              @endforeach
+          </ul>
+      </div><br />
+      @endif
+
   <form method="post" action="{{url('employers')}}" enctype="multipart/form-data">
     {{csrf_field()}}
       <div class="row">
@@ -20,7 +31,7 @@
       <div class="row">
         <div class="col-md-4"></div>
         <div class="form-group col-md-4">
-            <input  type="file" name="emplImage" id="exampleFormControlTextarea2"  rows="10">
+            <a  class="btn btn-info" href ="/employers/pics/1">wybierz zdjęcie</a>
         </div>
       </div>
       <div class="row">
