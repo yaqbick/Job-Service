@@ -120,6 +120,7 @@ class EmployerController extends Controller
     {
         $images = Image::all();
         $rowsCount= sizeOf($images)/2;
+        $rowsCount = ceil( $rowsCount);
         //dd($images[1]->url);
         //dd($rowsCount);
         return view('employers.pics', compact('images','rowsCount'));

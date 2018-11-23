@@ -64,12 +64,14 @@
                         <tr>
                         <?php $img = DB:: table('employers')->where('name',$ads['employer'])->value('image'); ?>
                             <td><img src="{{$img}}" width="100" height="100" alt="Image"/></td>
-                            <td><h3><a href="advertisements/example/{{$ads['id']}}">{{$ads['title']}}</a></h3><h5>{{$ads['employer']}}</h5><h5>{{$ads['city']}}</h5></td>
+                            <td class="adv"><h3><a href="advertisements/example/{{$ads['id']}}">{{$ads['title']}}</a></h3><h5>{{$ads['employer']}}</h5><h5>{{$ads['city']}}</h5></td>
                         </tr>
                         @endforeach
                         </tbody>
                     </table>
-                    <div class="card" >{{ $advertisements->links() }}</div>
+                    <div class="paginator row justify-content-md-center" >
+                        {{ $advertisements->links() }}
+                    </div>
                 </div>
             </div>
         </div>

@@ -28,6 +28,33 @@
     <!-- <link href="{{ asset('css/app.css') }}" rel="stylesheet"> -->
     <title>Bumeluj.pl</title>
         <style>
+        .adv a:link, .adv a:visited{
+            color: #008B8B;
+            text-decoration: none;
+            display: inline-block;
+
+        }
+        .paginator a:link, .paginator a:visited {
+            background-color: #008B8B;
+            color: white;
+            padding: 14px 25px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+        }
+        .active{
+            background-color: #4169E1;
+            color: white;
+            padding: 14px 25px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;    
+        }
+
+
+        .paginator a:hover, .paginator a:active {
+            background-color: #4169E1;
+        }
         body
         {
              background-image: url("https://lh3.googleusercontent.com/-_gvlOXyqZDY/W8y1Gw1xx2I/AAAAAAAACE0/8HC9nylw9TQWNqdbxx2GUbhm-iU3q62SgCL0BGAYYCw/h900/2018-10-21.jpg");
