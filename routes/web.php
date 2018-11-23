@@ -17,13 +17,14 @@ Route::get('advertisements/create','AdvertisementController@create')->middleware
 Route::resource('comments','CommentController');
 Route::resource('/employers','EmployerController');
 Route::get('/employers/create','EmployerController@create')->middleware('auth');
-Route::get('/employers/create/imageId={imageId}','EmployerController@create')->middleware('auth');
+
 
 
 Auth::routes();
 Route::get('/', 'AdvertisementController@index');
 Route::get('employers/pics/{id}','EmployerController@gallery');
-Route::post('employers/choose/1','EmployerController@chooseImg');
+Route::get('employers/choose/imageId={id}','EmployerController@chooseImg');
+Route::post('employers/new','EmployerController@tempStore');
 Route::get('advertisements/example/{id}','AdvertisementController@example');
 Route::get('filtered/example/{id}','AdvertisementController@example');
 Route::post('advertisements/filter','AdvertisementController@filter');

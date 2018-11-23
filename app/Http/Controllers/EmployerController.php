@@ -96,6 +96,25 @@ class EmployerController extends Controller
     {
         //
     }
+    public function tempStore(Request $request) 
+    { 
+
+     $emp = $this->validate(request(), [ 
+         'emplName' => 'required', 
+         'emplDescription' => 'required', 
+      ]); 
+
+      $emp = [ 
+           'name'=> $request['emplName'], 
+           'description'=> $request['emplDescription'] 
+                   
+      ]; 
+        
+        $request->session()->put('key', $emp);
+
+        return redirect('/employers/pics/1');
+  
+}
 
     public function gallery()
     {
@@ -108,14 +127,20 @@ class EmployerController extends Controller
 
     public function chooseImg(Request $request)
     {
-        $prevUrl=url()->previous();
-        $emplId = str_replace("http://127.0.0.1:8000/employers/pics/",null,$prevUrl);
-        //$imgId=$request->input('image')->get('value');
-        dd($request);
-        DB::table('employers')->where('id', $emplId)->update(['image' => 1]);
+        $value = $request->session()->get('key');
+        $url=url()->current();
+        $emplId = str_replace("http://127.0.0.1:8000/employers/choose/imageId=",null,$url);
+        $img = DB::table('images')->where('id', $emplId)->value('url');
+        $newEmp = [
+            'name'=> $value['name'],
+            'description'=> $value['description'],
+            'image'=>$img
+            
+        ];
+        Employer::create($newEmp);
+        $request->session()->forget('key');
 
-      return back();                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          
-       // return redirect('/employers/create/imageId={imageId}');
+      return back();                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         
      
     }
 }

@@ -14,7 +14,7 @@
       </div><br />
       @endif
 
-  <form method="post" action="{{url('employers')}}" enctype="multipart/form-data">
+  <form method="post" action="{{action('EmployerController@tempStore')}}" enctype="multipart/form-data">
     {{csrf_field()}}
       <div class="row">
         <div class="col-md-4"></div>
