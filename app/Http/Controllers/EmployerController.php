@@ -129,7 +129,7 @@ class EmployerController extends Controller
     {
         $value = $request->session()->get('key');
         $url=url()->current();
-        $emplId = str_replace("http://127.0.0.1:8000/employers/choose/imageId=",null,$url);
+        $emplId = str_replace("http://159.65.232.239/employers/choose/imageId=",null,$url);
         $img = DB::table('images')->where('id', $emplId)->value('url');
         $newEmp = [
             'name'=> $value['name'],
