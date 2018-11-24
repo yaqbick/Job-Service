@@ -8,7 +8,13 @@
 <div class=" col-md-1 align-self-center mr-5">
     <a href="/filtered/example/{{$prevId}}"><img src="https://iconizer.net/files/Brightmix/orig/monotone_arrow_left_small.png"></a>
     </div>
-    <div class="card col-md-6 .ml-auto" style="width: 50rem; height: 500px;">{!!$con!!}</div>
+    <!-- <div class="card col-md-3" style="width: 50rem; height: 800px;">{!!$con!!}</div>
+    <div class="card col-md-1" style="width: 50rem; height: 800px;">{!!$con!!}</div> -->
+    <div class="card col-md-6 .ml-auto" style="width: 50rem; height: 800px;">
+        <p></p>
+        <pre class="advHeader">{!!$empl!!}   {!!$title!!}    {!!$city!!}</pre>
+        <p>{!!$con!!}</p>
+    </div>
     <div class=" col-md-1 align-self-center mr-5 ">
         <a href="/filtered/example/{{$nextId}}"><img src="http://icons-for-free.com/icon/download-arrow_keyboard_right_icon-463560.png"></a>
     </div>

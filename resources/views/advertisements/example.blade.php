@@ -6,23 +6,29 @@
     <div class=" col-md-1 align-self-center mr-5">
     <a href="/advertisements/example/{{$prevId}}"><img src="https://iconizer.net/files/Brightmix/orig/monotone_arrow_left_small.png"></a>
     </div>
-    <div class="card col-md-6 .ml-auto" style="width: 50rem; height: 500px;">{!!$con!!}</div>
+    <!-- <div class="card col-md-3" style="width: 50rem; height: 800px;">{!!$con!!}</div>
+    <div class="card col-md-1" style="width: 50rem; height: 800px;">{!!$con!!}</div> -->
+    <div class="card col-md-6 .ml-auto" style="width: 50rem; height: 800px;">
+        <p></p>
+        <pre class="advHeader">{!!$empl!!}   {!!$title!!}    {!!$city!!}</pre>
+        <p>{!!$con!!}</p>
+    </div>
     <div class=" col-md-1 align-self-center mr-5 ">
         <a href="/advertisements/example/{{$nextId}}"><img src="http://icons-for-free.com/icon/download-arrow_keyboard_right_icon-463560.png"></a>
     </div>
 </div>
 
-<div class="row justify-content-md-center pt-5">
+<!-- <div class="row justify-content-md-center pt-5">
     <button type="submit" class="btn btn-inf"><a href="/advertisements/example/{{$prevId}}">Poprzednie ogłoszenie</a></button>
     <button type="submit" class="btn btn-inf"><a href="/advertisements/example/{{$nextId}}">Następne ogłoszenie</a></button>
-</div>
+</div> -->
 <div class="row pt-5">
     <div class="col-md-3"></div>
         <div class="table col-md-6">
             <table class="table table-striped">
                 @foreach($comments as $comm)
                 <tr>
-                    <td><p>użytkownik {{$comm['userName']}} napisał:</p></td>
+                    <td><p><b>{{$comm['userName']}}</b> napisał:</p></td>
                     <td>{{$comm['comment']}}</td>
                     @guest
                     @else

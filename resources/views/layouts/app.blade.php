@@ -55,6 +55,17 @@
         .paginator a:hover, .paginator a:active {
             background-color: #4169E1;
         }
+
+        .advHeader{
+            border-style: solid;
+            background-color: lightgrey;
+            text-align:  center;
+            position:relative;
+            padding-top: 20px;
+            border-color:  #008B8B;
+            background-color: #008B8B;
+            color: white;
+        }
         body
         {
              background-image: url("https://lh3.googleusercontent.com/-_gvlOXyqZDY/W8y1Gw1xx2I/AAAAAAAACE0/8HC9nylw9TQWNqdbxx2GUbhm-iU3q62SgCL0BGAYYCw/h900/2018-10-21.jpg");

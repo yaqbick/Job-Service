@@ -96,7 +96,11 @@ class AdvertisementController extends Controller
     {
         $url= URL::current();
         $id = substr($url,-1);
+        $maxId = DB::table('advertisements')->max('id');
         $con = DB::table('advertisements')->where('id', $id)->value('content');
+        $title = DB::table('advertisements')->where('id', $id)->value('title');
+        $empl = DB::table('advertisements')->where('id', $id)->value('employer');
+        $city = DB::table('advertisements')->where('id', $id)->value('city');
         if(strpos($con, '</p>')==true)
         {
             $encode=htmlentities($con);
@@ -113,29 +117,46 @@ class AdvertisementController extends Controller
         $advId = $request->session()->get('filter');
         $index =array_search($id, $advId);
         
-        if($index+1>=sizeof($advId))
-        {
-            $nextId=$advId[$index];
+            if($index+1>=sizeof($advId))
+            {
+                $nextId=$advId[$index];
+            }
+            else
+            {
+                $nextId= $advId[$index+1];
+            }
+
+            if($index-1<0)
+            {
+                $prevId=$advId[$index];
+            }
+            else
+            {
+                $prevId= $advId[$index-1];
+            }
+        return view('filtered.example', compact('con','trades','comments','prevId','nextId','format','title','empl','city'));
         }
         else
         {
-            $nextId= $advId[$index+1];
-        }
-        if($index-1<0)
-        {
-            $prevId=$advId[$index];
-        }
-        else
-        {
-            $prevId= $advId[$index-1];
-        }
-        return view('filtered.example', compact('con','trades','comments','prevId','nextId','format'));
-        }
-        else
-        {
-        $prevId=$id-1;
-        $nextId=$id+1;
-        return view('advertisements.example', compact('con','trades','comments','prevId','nextId','format'));
+            if($id>1)
+            {
+                $prevId=$id-1;
+            }
+            else
+            {
+                $prevId=1;
+            }
+
+            if($id==$maxId)
+            {
+                $nextId=$maxId;
+            }
+            else
+            {
+                $nextId=$id+1;
+            }
+        
+        return view('advertisements.example', compact('con','trades','comments','prevId','nextId','format','title','empl','city'));
         }
         
     }
