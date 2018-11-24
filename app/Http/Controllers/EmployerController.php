@@ -119,11 +119,14 @@ class EmployerController extends Controller
     public function gallery()
     {
         $images = Image::all();
-        $rowsCount= sizeOf($images)/2;
-        $rowsCount = ceil( $rowsCount);
+        $imageCount = DB::table('images')->max('id');
+        $rowsCount= sizeOf($images)/8;
+        $rowsCount = floor( $rowsCount);
+        $modulo=sizeOf($images)%8;
+
         //dd($images[1]->url);
         //dd($rowsCount);
-        return view('employers.pics', compact('images','rowsCount'));
+        return view('employers.pics', compact('images','rowsCount', 'imageCount','modulo'));
     }
 
     public function chooseImg(Request $request)
