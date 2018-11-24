@@ -31,13 +31,7 @@
       <div class="row">
         <div class="col-md-4"></div>
         <div class="form-group col-md-4">
-            <a  class="btn btn-info" href ="/employers/pics/1">wybierz zdjęcie</a>
-        </div>
-      </div>
-      <div class="row">
-        <div class="col-md-4"></div>
-        <div class="form-group col-md-4">
-          <button type="submit" class="btn btn-inf" style="margin-left:38px">Dodaj</button>
+          <button type="submit" class="btn btn-inf" style="margin-left:38px">Dalej</button>
         </div>
       </div>
   </form>
