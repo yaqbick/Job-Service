@@ -35,7 +35,7 @@
           <select class="custom-select" name="firma">
           <option disabled selected>wybierz firme</option>
           @foreach($employers as $empl)
-          <option>{{$empl['name']}}</option>
+          <option @if (old('firma') == $empl['name']) selected="selected" @endif>{{$empl['name']}}</option>
           @endforeach
           </select>
           </div>
@@ -47,7 +47,7 @@
           <select class="custom-select" name="branza">
           <option disabled selected>wybierz branżę</option>
           @foreach($trades as $trd)
-          <option>{{$trd['name']}}</option>
+          <option @if (old('branza') == $trd['name']) selected="selected" @endif>{{$trd['name']}}</option>
           @endforeach
           </select>
           </div>
