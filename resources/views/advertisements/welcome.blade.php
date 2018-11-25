@@ -62,8 +62,7 @@
                         <tbody>
                         @foreach($advertisements as $ads)
                         <tr>
-                        <?php $img = DB:: table('employers')->where('name',$ads['employer'])->value('image'); ?>
-                            <td><img src="{{$img}}" width="100" height="100" alt="Image"/></td>
+                            <td><img src="{{$ads['image']}}" width="100" height="100" alt="Image"/></td>
                             <td class="adv"><h3><a href="advertisements/example/{{$ads['id']}}">{{$ads['title']}}</a></h3><h5>{{$ads['employer']}}</h5><h5>{{$ads['city']}}</h5></td>
                         </tr>
                         @endforeach

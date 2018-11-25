@@ -21,6 +21,7 @@ class CreateAdvertisementsTable extends Migration
             $table->string('trade');
             $table->string('content');
             $table->integer('userId');
+            $table->string('image');
             $table->timestamps();
         });
     }

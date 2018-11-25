@@ -16,7 +16,7 @@ class AdvertisementController extends Controller
 {
     public function index()
     {
-        $advertisements = Advertisement::paginate(2);
+        $advertisements = Advertisement::paginate(5);
         $trades = Trade::all()->toArray();
         return view('advertisements.welcome', compact('advertisements','trades'));
     }
@@ -25,9 +25,8 @@ class AdvertisementController extends Controller
     {
         $trades = Trade::all()->toArray();
         $employers = Employer::all()->toArray();
-        return view('advertisements.create',compact('trades','employers'));
+        return view('advertisements.create', compact('employers', 'trades'));
     }
-
     public function store(Request $request)
     {
         $userId = Auth::id();
@@ -41,10 +40,12 @@ class AdvertisementController extends Controller
           ]);
 
           $ads['userId'] = $userId;
-
+          $img = DB:: table('employers')->where('name',$ads['employer'])->value('image');
+          $ads['image'] = $img;
           Advertisement::create($ads);
-  
-          return back()->with('success', 'Ogłoszenie zostało dodane');
+        //   $advertisements = Advertisement::paginate(5);
+        //   $trades = Trade::all()->toArray();
+          return redirect('/')->with('success', 'Ogłoszenie zostało dodane');
     }
 
     public function show($id)
@@ -77,7 +78,10 @@ class AdvertisementController extends Controller
           DB::table('advertisements')->where('id', $id)->update(['employer' =>  $request->get('employer')]);
           DB::table('advertisements')->where('id', $id)->update(['trade' =>  $request->get('trade')]);
           DB::table('advertisements')->where('id', $id)->update(['content' =>  $request->get('content')]);
-        // $ads['title'] = $request->get('title');
+          $img = DB:: table('employers')->where('name',$ads['employer'])->value('image');
+          DB::table('advertisements')->where('id', $id)->update(['image' =>  $img]);
+        
+          // $ads['title'] = $request->get('title');
         // $ads['city'] = $request->get('city');
         // $ads['employer'] = $request->get('employer');
         // $ads['trade'] = $request->get('trade');
