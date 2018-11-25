@@ -32,12 +32,21 @@ class AdvertisementController extends Controller
         $userId = Auth::id();
 
         $ads = $this->validate(request(), [
-            'title' => 'required',
-            'city' => 'required',
-            'employer'=>'required',
-            'trade' => 'required',
-            'content' => 'required',
+            'tytul' => 'required',
+            'miasto' => 'required',
+            'firma'=>'required',
+            'branza' => 'required',
+            'tresc_ogloszenia' => 'required',
           ]);
+
+          $ads = [ 
+            'title'=> $request['tytul'], 
+            'city'=> $request['miasto'], 
+            'employer'=> $request['firma'], 
+            'trade'=> $request['branza'], 
+            'content'=> $request['tresc_ogloszenia'] 
+                    
+       ];
 
           $ads['userId'] = $userId;
           $img = DB:: table('employers')->where('name',$ads['employer'])->value('image');
@@ -65,19 +74,19 @@ class AdvertisementController extends Controller
     {
         $ads = Advertisement::find($id);
         $ads = $this->validate(request(), [
-            'title' => 'required',
-            'city' => 'required',
-            'employer'=>'required',
-            'trade' => 'required',
-            'content' => 'required',
+            'tytul' => 'required',
+            'miasto' => 'required',
+            'firma'=>'required',
+            'branza' => 'required',
+            'tresc_ogloszenia' => 'required',
           ]);
         
-          DB::table('advertisements')->where('id', $id)->update(['trade' =>  $request->get('trade')]);
-          DB::table('advertisements')->where('id', $id)->update(['city' =>  $request->get('city')]);
-          DB::table('advertisements')->where('id', $id)->update(['employer' =>  $request->get('employer')]);
-          DB::table('advertisements')->where('id', $id)->update(['trade' =>  $request->get('trade')]);
-          DB::table('advertisements')->where('id', $id)->update(['content' =>  $request->get('content')]);
-          $img = DB:: table('employers')->where('name',$ads['employer'])->value('image');
+          DB::table('advertisements')->where('id', $id)->update(['title' =>  $request->get('tytul')]);
+          DB::table('advertisements')->where('id', $id)->update(['city' =>  $request->get('miasto')]);
+          DB::table('advertisements')->where('id', $id)->update(['employer' =>  $request->get('firma')]);
+          DB::table('advertisements')->where('id', $id)->update(['trade' =>  $request->get('branza')]);
+          DB::table('advertisements')->where('id', $id)->update(['content' =>  $request->get('tresc_ogloszenia')]);
+          $img = DB:: table('employers')->where('name',$ads['firma'])->value('image');
           DB::table('advertisements')->where('id', $id)->update(['image' =>  $img]);
         
           return redirect('/')->with('success', 'Ogłoszenie zostało zmienione');

@@ -9,20 +9,20 @@
       <div class="row">
         <div class="col-md-4"></div>
         <div class="form-group col-md-4">
-          <input type="text" class="form-control" name="title" value="{{$adv->title}}">
+          <input type="text" class="form-control" name="tytul" value="{{$adv->title}}">
         </div>
       </div>
       <div class="row">
         <div class="col-md-4"></div>
           <div class="form-group col-md-4">
-          <input type="text" class="form-control" name="city" value="{{$adv->city}}">
+          <input type="text" class="form-control" name="miasto" value="{{$adv->city}}">
           </div>
         </div>
       </div>
       <div class="row">
         <div class="col-md-4"></div>
           <div class="form-group col-md-4">
-          <select class="custom-select" name="employer">
+          <select class="custom-select" name="firma">
           <option selected>{{$adv->employer}}</option>
           @foreach($employers as $empl)
           <option>{{$empl['name']}}</option>
@@ -34,7 +34,7 @@
       <div class="row">
         <div class="col-md-4"></div>
           <div class="form-group col-md-4">
-          <select class="custom-select" name="trade">
+          <select class="custom-select" name="branza">
           <option selected>{{$adv->trade}}</option>
           @foreach($trades as $trd)
           <option>{{$trd['name']}}</option>
@@ -46,7 +46,7 @@
       <div class="row">
         <div class="col-md-4"></div>
         <div class="form-group col-md-4">
-        <textarea class="form-control content"  name="content"  rows="10">{{$adv->content}}</textarea>
+        <textarea class="form-control content"  name="tresc_ogloszenia"  rows="10">{{$adv->content}}</textarea>
         </div>
       </div>
       <div class="row">

@@ -31,25 +31,7 @@ class EmployerController extends Controller
 
 
     public function store(Request $request)
-    {
-
-        $emp = $this->validate(request(), [
-            'emplName' => 'required',
-            'emplDescription' => 'required',
-          ]);
-
-          $emp = [
-              'name'=> $request['emplName'],
-              'description'=> $request['emplDescription'],
-              'image'=>'default'
-              
-          ];
-          
-          Employer::create($emp);
-          $currentEmpl = DB::table('employers')->where('description', $emp['description'])->first();
- 
-          return redirect('/employers/pics/'.$currentEmpl->id);
-      
+    {      
     }
 
     /**
@@ -100,13 +82,13 @@ class EmployerController extends Controller
     { 
 
      $emp = $this->validate(request(), [ 
-         'emplName' => 'required', 
-         'emplDescription' => 'required', 
+         'nazwa_firmy' => 'required|unique:employers,name', 
+         'opis_firmy' => 'required', 
       ]); 
 
       $emp = [ 
-           'name'=> $request['emplName'], 
-           'description'=> $request['emplDescription'] 
+           'name'=> $request['nazwa_firmy'], 
+           'description'=> $request['opis_firmy'] 
                    
       ]; 
         

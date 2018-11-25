@@ -19,13 +19,13 @@
       <div class="row">
         <div class="col-md-4"></div>
         <div class="form-group col-md-4">
-          <input type="text" class="form-control" name="emplName" placeholder="nazwa"  value="{{ old('emplName') }}">
+          <input type="text" class="form-control" name="nazwa_firmy" placeholder="nazwa"  value="{{ old('nazwa_firmy') }}">
         </div>
       </div>>
       <div class="row">
         <div class="col-md-4"></div>
         <div class="form-group col-md-4">
-            <textarea class="form-control content" id="exampleFormControlTextarea2" name="emplDescription" rows="10" >{{ old('emplDescription') }}</textarea>
+            <textarea class="form-control content" id="exampleFormControlTextarea2" name="opis_firmy" rows="10" >{{ old('opis_firmy') }}</textarea>
         </div>
       </div>
       <div class="row">
