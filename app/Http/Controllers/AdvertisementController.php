@@ -43,8 +43,7 @@ class AdvertisementController extends Controller
           $img = DB:: table('employers')->where('name',$ads['employer'])->value('image');
           $ads['image'] = $img;
           Advertisement::create($ads);
-        //   $advertisements = Advertisement::paginate(5);
-        //   $trades = Trade::all()->toArray();
+
           return redirect('/')->with('success', 'Ogłoszenie zostało dodane');
     }
 
@@ -81,13 +80,7 @@ class AdvertisementController extends Controller
           $img = DB:: table('employers')->where('name',$ads['employer'])->value('image');
           DB::table('advertisements')->where('id', $id)->update(['image' =>  $img]);
         
-          // $ads['title'] = $request->get('title');
-        // $ads['city'] = $request->get('city');
-        // $ads['employer'] = $request->get('employer');
-        // $ads['trade'] = $request->get('trade');
-        // $ads['content'] = $request->get('content');
-        // $ads->save();
-        return redirect()->back();
+          return redirect('/')->with('success', 'Ogłoszenie zostało zmienione');
     }
 
     public function destroy($id)
