@@ -14,7 +14,7 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/js/bootstrap.min.js" integrity="sha384-o+RDsa0aLu++PJvFqy8fFScvbHFLtbvScb8AjopnFD+iEQ7wo/CG0xlczd+2O/em" crossorigin="anonymous"></script>
     <script src="https://cloud.tinymce.com/stable/tinymce.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-    <script src="image-picker/image-picker.js" type="text/javascript"></script>
+    <script src="https://cloud.tinymce.com/stable/tinymce.min.js?apiKey=q5zd6y22pfmjen97jr4rfv1s5genmdycoc9t6j30tanjga6z"></script>
     <script>tinymce.init({ selector:'textarea.content' });</script>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">

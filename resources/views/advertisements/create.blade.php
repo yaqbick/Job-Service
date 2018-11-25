@@ -19,13 +19,13 @@
       <div class="row">
         <div class="col-md-4"></div>
         <div class="form-group col-md-4">
-          <input type="text" class="form-control" name="title" placeholder="tytuł">
+          <input type="text" class="form-control" name="title" placeholder="tytuł"  value="{{ old('title') }}">
         </div>
       </div>
       <div class="row">
         <div class="col-md-4"></div>
           <div class="form-group col-md-4">
-          <input type="text" class="form-control" name="city" placeholder="miasto">
+          <input type="text" class="form-control" name="city" placeholder="miasto"  value="{{ old('city') }}">
           </div>
         </div>
       </div>
@@ -56,7 +56,7 @@
       <div class="row">
         <div class="col-md-4"></div>
         <div class="form-group col-md-4">
-        <textarea class="form-control content"  name="content" placeholeder='dodaj ogłoszenie' rows="10"></textarea>
+        <textarea class="form-control content"  name="content" placeholeder='dodaj ogłoszenie' rows="10" > {{ old('content') }}</textarea>
         </div>
       </div>
       <div class="row">
