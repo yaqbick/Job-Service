@@ -9,75 +9,45 @@ use Illuminate\Support\Facades\DB;
 
 class EmployerController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
     public function index()
     {
 
     }
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
     public function create()
     {
         return view('employers.create');
     }
 
-
     public function store(Request $request)
     {      
     }
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
     public function show($id)
     {
         //
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
     public function edit($id)
     {
         //
     }
 
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
     public function update(Request $request, $id)
     {
         //
     }
 
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
     public function destroy($id)
     {
         //
     }
+
+    //funkcja teoretycznie mogłaby nazywać się po prostu "store". 
+    //funkcja nie tworzy jednak nowego rekordu w bazie danych,
+    //a jedynie tymczasowo przechowuje w sesji nazwę i opis nowej firmy.
+    // Stąd decyzja o zrobieniu oddzielnej metody tempStore.
+
     public function tempStore(Request $request) 
     { 
 
@@ -98,6 +68,8 @@ class EmployerController extends Controller
   
 }
 
+    // funkcja, która ładuje galerię obrazów do wyboru przy określaniu avatara nowej firmy. 
+
     public function gallery()
     {
         $images = Image::all();
@@ -106,10 +78,10 @@ class EmployerController extends Controller
         $rowsCount = floor( $rowsCount);
         $modulo=sizeOf($images)%8;
 
-        //dd($images[1]->url);
-        //dd($rowsCount);
         return view('employers.pics', compact('images','rowsCount', 'imageCount','modulo'));
     }
+
+    // funkcja, która sprawia, że kliknięcie na obraz tworzy nowy rekord w bazie danych
 
     public function chooseImg(Request $request)
     {

@@ -14,6 +14,8 @@ use Illuminate\Support\Facades\Storage;
 
 class AdvertisementController extends Controller
 {
+    //wyświetlanie strony głównej
+
     public function index()
     {
         $advertisements = Advertisement::paginate(5);
@@ -21,12 +23,18 @@ class AdvertisementController extends Controller
         return view('advertisements.welcome', compact('advertisements','trades'));
     }
 
+    //wyswietlanie formularza do tworzenia ogłoszenia
+
     public function create()
     {
         $trades = Trade::all()->toArray();
         $employers = Employer::all()->toArray();
         return view('advertisements.create', compact('employers', 'trades'));
     }
+
+    //tworzenie ogłoszenia. Poza danymi zczytywanymi z formularza, metoda uzupełnia tabelę 
+    // "advertisements" o id użytkownika($userId) oraz obraz wybranej firmy($img)
+
     public function store(Request $request)
     {
         $userId = Auth::id();
@@ -61,6 +69,8 @@ class AdvertisementController extends Controller
         //
     }
 
+    //edycja ogłoszenia
+
     public function edit($id)
     {
         $trades = Trade::all()->toArray();
@@ -69,6 +79,7 @@ class AdvertisementController extends Controller
         return view('advertisements.edit',compact('adv','id','trades','employers'));
     }
 
+    //update ogłoszenia w bazie danych
 
     public function update(Request $request, $id)
     {
@@ -92,12 +103,19 @@ class AdvertisementController extends Controller
           return redirect('/')->with('success', 'Ogłoszenie zostało zmienione');
     }
 
+    //usuwanie danego ogłoszenia
+
     public function destroy($id)
     {
         $adv = Advertisement::find($id);
         $adv->delete();
         return redirect()->back();
     }
+
+    //wyświetlanie podglądu ogłoszenia. Metoda sprawdza, czy zostało założone filtrowanie
+    // i w zależnośći od tego określa, które ogłoszenie jest następne przy naciskaniu strzałek.
+    //Metdoa wyświetla również komentarze przypisane do danego ogłoszenia.
+
     public function example(Request $request)
     {
         $url= URL::current();
@@ -166,6 +184,14 @@ class AdvertisementController extends Controller
         }
         
     }
+
+    //filtrowanie ogłoszeń. W zależności od danych zczytanych z inputów i checkboxów do $request,
+    //tworzone jest jedno złożone zapytanie do bazy danych. Id filtrowanych ogłoszeń zostają umieszczone
+    // w tablicy $advId i zostają wysłane do sesji z kluczem "filter". Dzięki temu metoda "example" 
+    //może rozpoznać, że został nałożony filtr, a przewijanie strzałkami odbywa się tylko w obrębie 
+    // id ogłoszeń umieszczonych w $advId. Następnie zostaje wyświetlony wynik zapytania.
+    
+
     public function filter(Request $request)
     {
         $advertisements=array();
@@ -205,6 +231,8 @@ class AdvertisementController extends Controller
 
         return view('advertisements.filtered', compact('advertisements','trades'));
     }
+
+    //wyświetla listę ogłoszeń uzytkownika
 
     public function list()
     {
