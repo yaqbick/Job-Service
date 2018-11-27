@@ -6,8 +6,6 @@
     <div class=" col-md-1 align-self-center mr-5">
     <a href="/advertisements/example/{{$prevId}}"><img src="https://iconizer.net/files/Brightmix/orig/monotone_arrow_left_small.png"></a>
     </div>
-    <!-- <div class="card col-md-3" style="width: 50rem; height: 800px;">{!!$con!!}</div>
-    <div class="card col-md-1" style="width: 50rem; height: 800px;">{!!$con!!}</div> -->
     <div class="card col-md-6 .ml-auto" style="width: 50rem; height: 800px;">
         <p></p>
         <pre class="advHeader">{!!$empl!!}   {!!$title!!}    {!!$city!!}</pre>
@@ -18,10 +16,6 @@
     </div>
 </div>
 
-<!-- <div class="row justify-content-md-center pt-5">
-    <button type="submit" class="btn btn-inf"><a href="/advertisements/example/{{$prevId}}">Poprzednie ogłoszenie</a></button>
-    <button type="submit" class="btn btn-inf"><a href="/advertisements/example/{{$nextId}}">Następne ogłoszenie</a></button>
-</div> -->
 <div class="row pt-5">
     <div class="col-md-3"></div>
         <div class="table col-md-6">
@@ -44,7 +38,6 @@
                     @else
                     @endif
                     @endguest
-
                 </tr>
                 @endforeach
             </table>

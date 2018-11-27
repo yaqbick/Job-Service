@@ -10,13 +10,13 @@
     {
       echo '<div class="col"><a href = "/employers/choose/imageId='.$images[$id]->id.'"><img src="'.$images[$id]->url.'" class="img-fluid rounded" width="100" height="100" ></div>';
         if($id<$imageCount-1)
-              {
-              $id++;
-              }
-              else
-              {
-              $id=$imageCount-1;
-              }
+        {
+        $id++;
+        }
+        else
+        {
+        $id=$imageCount-1;
+        }
     }
     echo "</div>";
   }

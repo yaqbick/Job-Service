@@ -76,30 +76,6 @@
 </head>
 <body>
     <div id="app">
-        <!-- <nav class="navbar navbar-default navbar-static-top">
-            <div class="container">
-                <div class="navbar-header">
-
-
-                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#app-navbar-collapse" aria-expanded="false">
-                        <span class="sr-only">Toggle Navigation</span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                    </button>
-
-    
-                    <a class="navbar-brand" href="{{ url('/') }}">
-                        {{ config('app.name', 'Laravel') }}
-                    </a>
-                </div>
-
-                    <ul class="nav navbar-nav">
-                        &nbsp;
-                    </ul>
-                </div>
-            </div>
-        </nav> -->
         <main class="py-4">
         <nav class="navbar navbar-expand-lg navbar-light bg-light">
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
@@ -154,17 +130,13 @@
                             </ul>
                         </li>
                         @endguest
-                    </ul>
-                    
+                    </ul>                   
                 </div>
         </nav>
 
         @yield('content')
         </main>
     </div>
-
-    <!-- Scripts -->
-    <!-- <script src="{{ asset('js/app.js') }}"></script> -->
 </div>
 </body>
 </html>
