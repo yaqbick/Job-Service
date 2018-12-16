@@ -2,19 +2,35 @@
 
 @section('content')
 
-<div class="row justify-content-md-center pt-5">
-    <div class=" col-md-1 align-self-center mr-5">
-    <a href="/advertisements/example/{{$prevId}}"><img src="https://iconizer.net/files/Brightmix/orig/monotone_arrow_left_small.png"></a>
+<div class= "container">
+<div  class="row justify-content-sm-center pt-5">
+    <div class=" col-2  align-self-center">
+        <a href="/advertisements/example/{{$prevId}}"><img class="arrow" src="https://icons8.com/iconizer/files/DefaultIcon_ver_0.11/orig/arrow-left.png" ></a>
     </div>
-    <div class="card col-md-6 .ml-auto" style="width: 50rem; height: 800px;">
-        <p></p>
+    <div  class="col-6 textarea ">
+    <p></p>
         <pre class="advHeader">{!!$empl!!}   {!!$title!!}    {!!$city!!}</pre>
-        <p>{!!$con!!}</p>
+        <p class="advContent">{!!$con!!}</p>
+
     </div>
-    <div class=" col-md-1 align-self-center mr-5 ">
-        <a href="/advertisements/example/{{$nextId}}"><img src="http://icons-for-free.com/icon/download-arrow_keyboard_right_icon-463560.png"></a>
+    <div class="col-2  align-self-center">
+        <a href="/advertisements/example/{{$nextId}}"><img class="arrow" src="https://icons8.com/iconizer/files/DefaultIcon_ver_0.11/orig/arrow-right.png"></a>
     </div>
 </div>
+
+<div  class="row arrowDown justify-content-sm-center pt-5">
+    <div class=" col-2  align-self-center">
+        <a href="/advertisements/example/{{$prevId}}"><img class="arrowSmall" src="https://icons8.com/iconizer/files/DefaultIcon_ver_0.11/orig/arrow-left.png" ></a>
+    </div>
+    <div  class="col-7 "></div>
+    <div class="col-2 align-self-center">
+        <a href="/advertisements/example/{{$nextId}}"><img class="arrowSmall" src="https://icons8.com/iconizer/files/DefaultIcon_ver_0.11/orig/arrow-right.png"></a>
+    </div>
+</div>
+
+
+
+
 
 <div class="row pt-5">
     <div class="col-md-3"></div>
@@ -50,14 +66,16 @@
 <div class="komentarze pt-5">
     <form method="post" action="{{url('comments')}}">
     {{csrf_field()}}
-    <div class="row">
-        <div class="col-md-4"></div>
-          <div class="form-group col-md-4">
+    <div class="row justify-content-sm-center">
+        <div class="col-2"></div>
+          <div class="form-group col-6">
             <input type="text" class="form-control" name="comment" placeholder="dodaj komentarz..."><button type="submit" class="btn btn-info">dodaj</button>
           </div>
+          <div class="col-2"></div>
         </div>
       </div>
     </form>
+</div>
 </div>
 @endguest
 @endsection

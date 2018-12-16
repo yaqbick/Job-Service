@@ -28,5 +28,5 @@ Route::post('employers/new','EmployerController@tempStore');
 Route::get('advertisements/example/{id}','AdvertisementController@example');
 Route::get('filtered/example/{id}','AdvertisementController@example');
 Route::post('advertisements/filter','AdvertisementController@filter');
-Route::get('advertisements/list/{id}','AdvertisementController@list');
+Route::get('/advertisements/list/{id}','AdvertisementController@list');
 Route::get('/home', 'HomeController@index')->name('home');

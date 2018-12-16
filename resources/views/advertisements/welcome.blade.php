@@ -28,19 +28,21 @@
 
         <div class="container-fluid">
             <div class="row">
-                <div class="col-12 col-md-3 col-xl-2 bd-sidebar  pt-5">
-                    <p class="text-white"><b>Branża</b></p>
-                    
+                <div id="trade" class="col-12 col-md-3 pt-5">                  
                     {{csrf_field()}}
+                    <ul>
+                    <p><b>Branża</b></p>
                     @foreach($trades as $trd)
-                    <div class="form-check">
+                    <li class="form-check">
                         <input class="form-check-input" name ="{{$trd['name']}}" type="checkbox" value="{{$trd['name']}}" id="{{$trd['name']}}" >
                         <label class="form-check-label" for="{{$trd['name']}}">
-                        <p class="text-white">{{$trd['name']}}</p>
+                        <p>{{$trd['name']}}</p>
                         </label>
-                    </div>
+                    </li>
                     @endforeach
+                    
                     <button type="submit" class="btn btn-info">szukaj</button>
+                    </ul>
     </form>
                 </div>
                 <div class = "col-12 col-md-9">
@@ -48,14 +50,29 @@
                         <table class="table table-striped">
                             <thead>
                                 <tr>
-                                    <th>Tytuł</th>
+                                    <th>Najnowsze oferty</th>
                                 </tr>
                             </thead>
                             <tbody>
                                 @foreach($advertisements as $ads)
-                                <tr>
+                                <tr class="offer">
                                     <td><img src="{{$ads['image']}}" width="100" height="100" alt="Image"/></td>
-                                    <td class="adv"><h3><a href="advertisements/example/{{$ads['id']}}">{{$ads['title']}}</a></h3><h5>{{$ads['employer']}}</h5><h5>{{$ads['city']}}</h5></td>
+                                    <td class="adv">
+                                    <h5 class="offer-details__title-link"><a href="advertisements/example/{{$ads['id']}}">{{$ads['title']}}</a></h5>
+                                    <p class="offer-company">{{$ads['employer']}}</p>
+                                    <ul class="offer-labels">
+                                        <li class="offer-labels__item offer-labels__item--location offer-labels__item--expand-trigger">
+                                                <i class="mdi mdi-map-marker offer-labels__item-icon"></i>{{$ads['city']}}
+
+                                            </li>
+                                            <li class="offer-labels__item offer-labels__item--employment-level">
+                                                <i class="mdi mdi-signal offer-labels__item-icon"></i>Specjalista
+                                            </li>
+                                            <li class="offer-labels__item offer-labels__item--employment-form">
+                                                <i class="mdi mdi-calendar-blank offer-labels__item-icon"></i>Pełen etat
+                                            </li>
+                                    </ul>
+                                    </td>
                                 </tr>
                                 @endforeach
                             </tbody>
