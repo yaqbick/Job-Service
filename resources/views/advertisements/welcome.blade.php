@@ -14,10 +14,10 @@
     <form method="post" action="{{url('advertisements/filter')}}"> 
         <div class="row justify-content-center">
 
-                <div class="col-2">
+                <div class="col-sm-2">
                     <input type="text" name='job' class="form-control" placeholder="stanowisko">
                 </div>
-                <div class="col-2">
+                <div class="col-sm-2">
                     <input type="text" name='city' class="form-control" placeholder="miasto">
                 </div>
                 <div class="col-2">
