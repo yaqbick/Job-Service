@@ -297,7 +297,7 @@
     
     }
 
-    @media only screen and (max-width: 300px) { 
+    @media only screen and (max-width: 100px) { 
 
     .logo{
         display:flex;
