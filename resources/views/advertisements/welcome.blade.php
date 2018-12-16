@@ -14,7 +14,7 @@
     <form method="post" action="{{url('advertisements/filter')}}"> 
         <div class="row justify-content-sm-center">
             <div class="form-row ">
-                <div class="col col-4 offset-2 ">
+                <div class="col col-4">
                     <input type="text" name='job' class="form-control" placeholder="stanowisko">
                 </div>
                 <div class="col col-4">
