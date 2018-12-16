@@ -31,6 +31,10 @@
     <!-- <link href="{{ asset('css/app.css') }}" rel="stylesheet"> -->
     <title>Bumeluj.pl</title>
         <style>
+        .logo
+        {
+            display:none;
+        }
         .offer
         {
             display: block;
@@ -293,8 +297,11 @@
     
     }
 
-    @media only screen and (max-width: 576px) { 
-        
+    @media only screen and (max-width: 300px) { 
+
+    .logo{
+        display:flex;
+    }
     }
 
 
@@ -395,7 +402,10 @@
                             </ul>
                         </li>
                         @endguest
-                    </ul>                   
+                    </ul>               
+                </div>
+                <div class="logo">
+                    <a class="btn btn-info" href="/advertisements">bumeluj.pl</a>
                 </div>
         </nav>
 
