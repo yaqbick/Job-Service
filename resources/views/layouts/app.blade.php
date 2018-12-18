@@ -266,12 +266,7 @@
         display:flex;
     }
 
-    .arrowSmall
-    {
-        width: 50px;
-        height: 50px;
-        margin-left:15px;
-    }
+ 
 
 
     #trade{display: none; width:88%; position:relative;  height:30px;color: white;}
@@ -301,6 +296,12 @@
 
     .logo{
         display:flex;
+    }
+
+       .arrowSmall
+    {
+        width: 50px;
+        height: 50px;
     }
     }
 
