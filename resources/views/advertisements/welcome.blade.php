@@ -91,11 +91,12 @@
                                 @endforeach
                             </tbody>
                         </table>
-                        <div class="row justify-content-sm-center">
-                            <div class="col-2"></div>
-                            <div class="form-group col-4 paginator"></div>
+                        <div class="row justify-content-md-center">
+                            <div class="col-md-2"></div>
+                            <div class="form-group col-md-2 paginator">
                             {{ $advertisements->links() }}
-                            <div class="col-2"></div>
+                            </div>
+                            <div class="col-md-2"></div>
                         </div>
                             
                         </div>
