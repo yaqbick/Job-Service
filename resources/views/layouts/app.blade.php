@@ -292,7 +292,7 @@
     
     }
 
-    @media only screen and (max-width: 150px) { 
+    @media only screen and (max-width: 480px) { 
 
     .logo{
         display:flex;
