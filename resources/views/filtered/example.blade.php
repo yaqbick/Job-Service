@@ -17,6 +17,15 @@
         <a href="/advertisements/example/{{$nextId}}"><img class="arrow" src="https://icons8.com/iconizer/files/DefaultIcon_ver_0.11/orig/arrow-right.png"></a>
     </div>
 </div>
+<div  class="row arrowDown justify-content-sm-center pt-5">
+    <div class=" col-3  "></div>
+    <div class="form-group col-6">
+    <a href="/advertisements/example/{{$prevId}}"><button class="btn btn-info arrowSmall" ><-</button>
+    <a href="/advertisements/example/{{$nextId}}"><button class="btn btn-danger arrowSmall">-></button>
+    </div>
+    </div>
+    <div class="col-3 "></div>       
+</div>
 
 <div class="row pt-5">
     <div class="col-md-4"></div>

@@ -303,6 +303,11 @@
         width: 50px;
         height: 50px;
     }
+    .textarea
+    {
+        width:200px;
+        
+    }
     }
 
 

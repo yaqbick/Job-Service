@@ -12,7 +12,7 @@
 
 
     <form method="post" action="{{url('advertisements/filter')}}"> 
-        <div class="row justify-content-center">
+        <!-- <div class="row justify-content-center">
 
                 <div class="col-sm-2">
                     <input type="text" name='job' class="form-control" placeholder="stanowisko">
@@ -24,6 +24,20 @@
                     <button type="submit" class="btn btn-info">szukaj</button>
                 </div>
 
+        </div> -->
+
+        <div class="row justify-content-md-center">
+            <div class="form-row ">
+                <div class="col col-md-4 offset-2 ">
+                    <input type="text" name='job' class="form-control" placeholder="stanowisko">
+                </div>
+                <div class="col col-md-4">
+                    <input type="text" name='city' class="form-control" placeholder="miasto">
+                </div>
+                <div class="col col-md-2">
+                    <button type="submit" class="btn btn-info">szukaj</button>
+                </div>
+            </div>
         </div>
 
         <div class="container-fluid">
@@ -77,8 +91,13 @@
                                 @endforeach
                             </tbody>
                         </table>
-                        <div class="paginator row justify-content-md-center" >
+                        <div class="row justify-content-sm-center">
+                            <div class="col-2"></div>
+                            <div class="form-group col-6 paginator"></div>
                             {{ $advertisements->links() }}
+                            <div class="col-2"></div>
+                        </div>
+                            
                         </div>
                     </div>
                 </div>

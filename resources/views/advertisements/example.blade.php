@@ -11,7 +11,6 @@
     <p></p>
         <pre class="advHeader">{!!$empl!!}   {!!$title!!}    {!!$city!!}</pre>
         <p class="advContent">{!!$con!!}</p>
-
     </div>
     <div class="col-2  align-self-center">
         <a href="/advertisements/example/{{$nextId}}"><img class="arrow" src="https://icons8.com/iconizer/files/DefaultIcon_ver_0.11/orig/arrow-right.png"></a>
@@ -25,8 +24,7 @@
     <a href="/advertisements/example/{{$nextId}}"><button class="btn btn-danger arrowSmall">-></button>
     </div>
     </div>
-    <div class="col-3 "></div>
-        
+    <div class="col-3 "></div>       
 </div>
 
 
