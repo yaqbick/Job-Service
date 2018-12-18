@@ -305,7 +305,7 @@
     }
     .textarea
     {
-        width:200px;
+        width:300px;
         
     }
     }
