@@ -19,12 +19,11 @@
 </div>
 
 <div  class="row arrowDown justify-content-sm-center pt-5">
-    <div class=" col-2  align-self-center">
-        <a href="/advertisements/example/{{$prevId}}"><img class="arrowSmall" src="https://icons8.com/iconizer/files/DefaultIcon_ver_0.11/orig/arrow-left.png" ></a>
+    <div class=" col-3  ">
+        <a href="/advertisements/example/{{$prevId}}"><button class="btn btn-info arrowSmall" ><-</button>
     </div>
-    <div  class="col-7 "></div>
-    <div class="col-2 align-self-center">
-        <a href="/advertisements/example/{{$nextId}}"><img class="arrowSmall" src="https://icons8.com/iconizer/files/DefaultIcon_ver_0.11/orig/arrow-right.png"></a>
+    <div class="col-3 ">
+        <a href="/advertisements/example/{{$nextId}}"><button class="btn btn-danger arrowSmall">-></button>
     </div>
 </div>
 
