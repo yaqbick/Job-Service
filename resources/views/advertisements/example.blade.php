@@ -19,12 +19,14 @@
 </div>
 
 <div  class="row arrowDown justify-content-sm-center pt-5">
-    <div class=" col-3  ">
-        <a href="/advertisements/example/{{$prevId}}"><button class="btn btn-info arrowSmall" ><-</button>
+    <div class=" col-3  "></div>
+    <div class="form-group col-6">
+    <a href="/advertisements/example/{{$prevId}}"><button class="btn btn-info arrowSmall" ><-</button>
+    <a href="/advertisements/example/{{$nextId}}"><button class="btn btn-danger arrowSmall">-></button>
     </div>
-    <div class="col-3 ">
-        <a href="/advertisements/example/{{$nextId}}"><button class="btn btn-danger arrowSmall">-></button>
     </div>
+    <div class="col-3 "></div>
+        
 </div>
 
 
