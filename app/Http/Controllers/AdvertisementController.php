@@ -18,7 +18,7 @@ class AdvertisementController extends Controller
 
     public function index()
     {
-        $advertisements = Advertisement::paginate(4);
+        $advertisements = Advertisement::paginate(10);
         $trades = Trade::all()->toArray();
         return view('advertisements.welcome', compact('advertisements','trades'));
     }
